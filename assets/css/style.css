@@ -1,0 +1,13 @@
+/* Base CSS */
+body {
+    padding: 100px;
+}
+.container {
+    max-width: 1170px;
+}
+.submit-area {
+    margin-top: 50px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px gray;
+}
