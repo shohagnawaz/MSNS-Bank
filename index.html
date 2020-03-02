@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <!--- Start Login Area Here --->
     <div id="login-area">
         <h1 class="text-center">Welcome to MSNS Bank</h1>
         <div class="submit-area">
@@ -25,16 +26,23 @@
             <button id="login" class="btn btn-success">Enter</button>
         </div>
     </div>
+    <!--- End Login Area Here --->
+    
+    <!--- Start Transaction Area Here --->
+    <div id="transaction-area">
+        <h1>Transaction Area</h1>
+    </div>
+    <!--- End Transaction Area Here --->
 
+    <!--- All JS --->
     <script>
         const loginBtn = document.getElementById("login");
         loginBtn.addEventListener("click", function(){
             const loginArea = document.getElementById("login-area");
             loginArea.style.display = "none";
+            const transactionArea = document.getElementById("transaction-area");
+            transactionArea.style.display = "block";
         })
     </script>
 </body>
-
-    <!--- All JS --->
-
 </html>
