@@ -11,3 +11,18 @@ body {
 #transaction-area {
     display: none;
 }
+.status {
+    color: white;
+    margin: 0 20px;
+    padding: 40px;
+    border-radius: 10px;
+}
+.deposit {
+    background-color: slateblue;
+}
+.withdraw {
+    background-color: lightsalmon;
+}
+.balance {
+    background-color: orange;
+}
