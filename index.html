@@ -41,7 +41,7 @@
             <div class="col-lg-4">
                 <div class="withdraw status">
                     <h5>Withdraw</h5>
-                    <h2>$00</h2>
+                    <h2>$ <span id="currentWithdraw">00</span></h2>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -64,7 +64,7 @@
             <div class="col-lg-6">
                 <div class="submit-area">
                     <h2>Withdraw</h2>
-                    <input class="form-control" type="text" placeholder="$ amount you want to withdraw">
+                    <input id="withdrawAmount" class="form-control" type="text" placeholder="$ amount you want to withdraw">
                     <br>
                     <button id="withdraw" class="btn btn-success">Withdraw</button>
                 </div>
@@ -86,15 +86,31 @@
 
         // deposit button event handler
         const depositBtn = document.getElementById("deposit");
-        deposit.addEventListener("click", function(){
-            const depositAmount = document.getElementById("depositAmount").value;
-            const depositNumber = parseFloat(depositAmount);
+        depositBtn.addEventListener("click", function(){
+            const depositNumber =  getInputNumber("depositAmount")
 
             updateSpanText("currentDeposit", depositNumber);
             updateSpanText("currentBalance", depositNumber);
             
             document.getElementById("depositAmount").value = "";
         })
+
+        // Withdraw button event handler
+        const withdrawBtn = document.getElementById("withdraw");
+        withdrawBtn.addEventListener("click", function(){
+            const withdrawNumber = getInputNumber("withdrawAmount");
+
+            updateSpanText("currentWithdraw", withdrawNumber);
+            updateSpanText("currentBalance", -1 * withdrawNumber);
+
+            document.getElementById("withdrawAmount").value = "";
+        })
+
+        function getInputNumber(id){
+            const amount = document.getElementById(id).value;
+            const amountNumber = parseFloat(amount);
+            return amountNumber;
+        }
 
         function updateSpanText(id, depositNumber){
             const current = document.getElementById(id).innerText;
